@@ -6,6 +6,9 @@ Initial date: May 2, 2020
 Last update:  May 4, 2020 
 */
 
+CREATE DATABASE COMPANY;-- It creates a new database
+USE COMPANY;            -- It selects the database
+
 -- It creates a table named EMPLOYEE
 CREATE TABLE EMPLOYEE
 (

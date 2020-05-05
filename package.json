@@ -1,0 +1,28 @@
+{
+  "name": "company-database-navathe",
+  "version": "1.0.0",
+  "description": "Script implementation of the COMPANY database of the book Database Systems Sixth Edition. Ramez Elmasri and Shamkant B. Navathe",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roger-Aguiar/company-database-navathe.git"
+  },
+  "keywords": [
+    "React",
+    "Express",
+    "Database"
+  ],
+  "author": "Roger Silva Santos Aguiar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Roger-Aguiar/company-database-navathe/issues"
+  },
+  "homepage": "https://github.com/Roger-Aguiar/company-database-navathe#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

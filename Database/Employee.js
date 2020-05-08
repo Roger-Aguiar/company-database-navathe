@@ -2,7 +2,7 @@
 Name:         Roger Silva Santos Aguiar
 Function:     It creates a module to access the EMPLOYEE table
 Initial date: April 19, 2020
-Last update:  April 29, 2020 
+Last update:  May 8, 2020 
 */
 
 //Required modules
@@ -13,24 +13,15 @@ module.exports =
 {
     show(res)
     {
-        //It opens the connection
-        connection.connect()
+        connection.many('SELECT * FROM EMPLOYEE')
+        .then(function (data) 
+        {
+            res.send(data)
+        })//End then
+        .catch(function (error) 
+        {
+            console.log('ERROR:', error)
+        })//End catch
 
-        connection.query
-        (
-            'SELECT * FROM EMPLOYEE', 
-            function (err, rows, fields) 
-            {
-                if (err) 
-                {
-                    throw err
-                }   
-                //It displays the array in the browser     
-                res.send(rows);          
-            }
-        )//End connection query
-
-        //It closes the connection
-        connection.end();
-    }//End show method
+    }//End method    
 }//End module

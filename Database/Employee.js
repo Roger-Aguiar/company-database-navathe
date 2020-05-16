@@ -40,6 +40,21 @@ module.exports =
         })//End catch       
     },//End insert method
 
+    update(res, fname, minit, lname, ssn, bdate, address, sex, salary, super_ssn, dno)
+    {  
+        //It inserts the data into the table
+        connection.query('UPDATE EMPLOYEE SET fname = $1, minit = $2, lname = $3, bdate = $4, address = $5, sex = $6, salary = $7, super_ssn = $8, dno = $9 WHERE ssn = $10',
+        [fname, minit, lname, bdate, address, sex, salary, super_ssn, dno, ssn])
+        .then(function (data) 
+        {
+            res.send('<h2>Operation has been completed!</h2>');//It redirects to the homepage.          
+        })//End then
+        .catch(function (error) 
+        {
+            console.log('ERROR:', error)
+        })//End catch       
+    },//End insert method
+
     delete_row(res, ssn)
     {  
         //It inserts the data into the table

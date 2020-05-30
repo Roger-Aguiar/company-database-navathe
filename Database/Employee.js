@@ -2,7 +2,7 @@
 Name:         Roger Silva Santos Aguiar
 Function:     It creates a module to access the EMPLOYEE table
 Initial date: April 19, 2020
-Last update:  May 14, 2020 
+Last update:  May 30, 2020 
 */
 
 //Required modules
@@ -23,7 +23,22 @@ module.exports =
             console.log('ERROR:', error)
         })//End catch
 
-    },//End show method   
+    },//End show method
+    
+    //This method selects an employee by ssn
+    selectEmployee(res, ssn)
+    {
+        connection.query('SELECT * FROM EMPLOYEE WHERE ssn = $1', ssn)
+        .then(function (data) 
+        {
+            res.send(data)
+        })//End then
+        .catch(function (error) 
+        {
+            console.log('ERROR:', error)
+        })//End catch
+
+    },//End show method
 
     insert(res, fname, minit, lname, ssn, bdate, address, sex, salary, super_ssn, dno)
     {  

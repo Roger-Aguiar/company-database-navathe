@@ -56,6 +56,20 @@ router.get
 
 router.get
 (
+    '/select_employee/:ssn', 
+    function (req, res)
+    {
+        //Variables
+        //It gets the params       
+        var ssn = req.params.ssn;        
+
+        //It selects an employee by ssn from EMPLOYEE table using the following module, 
+        myModules.selectEmployee(res, ssn);                
+    } 
+);//End select_employee route
+
+router.get
+(
     '/update/:fname/:minit/:lname/:ssn/:bdate/:address/:sex/:salary/:super_ssn/:dno', 
     function (req, res)
     {
